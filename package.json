@@ -1,0 +1,44 @@
+{
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "gulp-zip": "^4.0.0"
+  },
+  "name": "harner-blank-theme",
+  "description": "Harner Blank Theme",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "gulp-uglify": "^3.0.0",
+    "gulp-zip": "^4.0.0",
+    "gulp-connect": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harnerdesigns/Harner-Blank-Theme.git"
+  },
+  "keywords": [
+    "wordpress",
+    "php",
+    "theme",
+    "responsive",
+    "blank"
+  ],
+  "author": "Jack Harner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harnerdesigns/Harner-Blank-Theme/issues"
+  },
+  "homepage": "https://github.com/harnerdesigns/Harner-Blank-Theme#readme"
+}
