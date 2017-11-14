@@ -1,4 +1,16 @@
-html{
-	background:#f00;
-	body{
-		border:2px solid #000;}}
+/*!
+Theme Name: Harner Blank theme
+Theme URI: http://harnerdesigns.com/
+Author: Harner Designs
+Author URI: http://harneredesigns.com/
+Description: A blank starter theme for developing custom worpress themes.
+Version: 1.0
+*/
+
+@import "reset";
+
+html {
+    body {
+        background: #fff;
+    }
+}

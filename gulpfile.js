@@ -7,12 +7,19 @@ var gulp = require('gulp'),
 
 gulp.task('log', function() {gutil.log("== MY LOG TASK ==") });
 
+gulp.task('default', ['watch']);
+
 gulp.task('sass', function() {
 	gulp.src('scss/style.scss')
-	.pipe(sass({style: 'expanded'}))
+	.pipe(sass({style: 'compressed'}))
 	.on('error', gutil.log)
 	.pipe(gulp.dest("./"))
 });
+
+gulp.task('watch', function() {
+  gulp.watch('scss/**/*.scss', ['sass']);
+});
+
 
 gulp.task('connect', function() {
 	  connect.server({
