@@ -3,6 +3,8 @@
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-connect": "latest",
+    "gulp-header": "^1.8.9",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
     "gulp-util": "latest",

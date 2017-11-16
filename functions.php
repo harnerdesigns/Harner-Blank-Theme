@@ -101,7 +101,7 @@ $author_details .= '</p>';
 }
  
 // Pass all this info to post content  
-$content = $content . '<footer class="author_bio_section" >' . $author_details . '</footer>';
+$content = $content . '<section class="author_bio_section" >' . $author_details . '</section>';
 }
 return $content;
 }

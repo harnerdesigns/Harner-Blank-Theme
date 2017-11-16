@@ -116,5 +116,8 @@ a {
   float: left;
   margin: 0 10px 10px 0; }
 
+footer {
+  min-height: 75vh; }
+
 html body {
   background: #fff; }
