@@ -13,16 +13,20 @@ const zip = require('gulp-zip');
 gulp.task('log', function() {gutil.log("== MY LOG TASK ==") });
 
 
-gulp.task('sass', function() {
+gulp.task('sass', gulp.series(function(done) {
 	gulp.src('src/scss/style.scss')
 	.pipe(sass({style: 'compressed'}))
 	.on('error', gutil.log)
-	.pipe(gulp.dest("./src"))
-});
+    .pipe(header(banner.theme, { package : package }))
+	.pipe(gulp.dest("./src"));
+	done();
+}));
 
-gulp.task('watch', function() {
-  gulp.watch('src/scss/**/*.scss', ['sass']);
-});
+gulp.task('watch', gulp.series(function() {
+  gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
+
+
+}));
 
 gulp.task('default', gulp.series('watch'));
 
@@ -94,6 +98,11 @@ gulp.task('build:php', function(){
 		.pipe(gulp.dest('build/' + package.version + '/'))
 });
 
+gulp.task('build:screenshot', function(){
+	return gulp.src('./src/screenshot.jpg')
+		.pipe(gulp.dest('build/' + package.version + '/'))
+});
+
 // Create style.css with theme header
 gulp.task('build:theme', function () {
     return gulp.src('build/' + package.version + '/style.css')
@@ -102,4 +111,4 @@ gulp.task('build:theme', function () {
 });
 
 
-gulp.task('build', gulp.series('build:scripts', 'build:styles', 'build:php', 'build:zip'));
+gulp.task('build', gulp.series(gulp.parallel('build:scripts', 'build:styles', 'build:php', 'build:screenshot'), 'build:zip'));

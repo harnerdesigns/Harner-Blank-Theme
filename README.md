@@ -1,2 +1,2 @@
 ## Harner-Blank-Theme
-A base wordpress theme to build custom themes out of. Designed by [Harner Designs](http://harnerdesigns.com)
+A Dope Fucking WordPress Theme Framework By [Harner Designs](http://harnerdesigns.com). Jump in quicker & spend less time building sites.

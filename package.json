@@ -11,7 +11,7 @@
     "gulp-zip": "^4.0.0"
   },
   "name": "harner-blank-theme",
-  "description": "Harner Blank Theme",
+  "description": "A Dope Fucking WordPress Theme Framework By Harner Designs. Jump in quicker & spend less time building sites",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
