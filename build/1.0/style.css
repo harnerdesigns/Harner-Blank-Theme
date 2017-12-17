@@ -1,12 +1,13 @@
 /*!
-Theme Name: Harner Blank theme
-Theme URI: http://harnerdesigns.com/
-Author: Harner Designs
-Author URI: http://harneredesigns.com/
-Description: A blank starter theme for developing custom worpress themes.
-Version: 1.0
-*/
-html, body, div, span, applet, object, iframe,
+ * Theme Name: harner-blank-theme
+ * Theme URI: git+https://github.com/harnerdesigns/Harner-Blank-Theme.git
+ * GitHub Theme URI: git+https://github.com/harnerdesigns/Harner-Blank-Theme.git
+ * Description: Harner Blank Theme
+ * Version: 1.0
+ * Author: 
+ * Author URI: 
+ * License: ISC
+ *  */html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -104,6 +105,25 @@ a {
 .author_bio_section {
   background: none repeat scroll 0 0 #F5F5F5;
   padding: 15px;
+  border: 1px solid #ccc; }
+
+.author_name {
+  font-size: 16px;
+  font-weight: bold; }
+
+.author_details img {
+  border: 1px solid #D8D8D8;
+  border-radius: 50%;
+  float: left;
+  margin: 0 10px 10px 0; }
+
+footer {
+  min-height: 75vh; }
+
+html body {
+  background: #fff;
+  color: #333; }
+ng: 15px;
   border: 1px solid #ccc; }
 
 .author_name {

@@ -12,7 +12,7 @@
   },
   "name": "harner-blank-theme",
   "description": "Harner Blank Theme",
-  "version": "1.0.0",
+  "version": "1.0",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",

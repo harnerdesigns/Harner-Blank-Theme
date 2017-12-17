@@ -13,26 +13,22 @@ gulp.task('log', function() {gutil.log("== MY LOG TASK ==") });
 gulp.task('default', ['watch']);
 
 gulp.task('sass', function() {
-	gulp.src('scss/style.scss')
+	gulp.src('src/scss/style.scss')
 	.pipe(sass({style: 'compressed'}))
 	.on('error', gutil.log)
-	.pipe(gulp.dest("./"))
+	.pipe(gulp.dest("./src"))
 });
 
 gulp.task('watch', function() {
-  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('src/scss/**/*.scss', ['sass']);
 });
 
 
-gulp.task('build', function() {
-
-	});
+gulp.task('build', ['build:scripts', 'build:styles', 'build:php']);
 
 // Remove pre-existing content from output and test folders
 gulp.task('clean:dist', function () {
-	del.sync([
-		paths.output
-	]);
+
 });
 
 
@@ -54,7 +50,7 @@ var banner = {
 		' | Open Source Credits: <%= package.openSource.credits %>' +
 		' */\n',
 	theme :
-		'/**\n' +
+		'/*!\n' +
 		' * Theme Name: <%= package.name %>\n' +
 		' * Theme URI: <%= package.repository.url %>\n' +
 		' * GitHub Theme URI: <%= package.repository.url %>\n' +
@@ -63,7 +59,7 @@ var banner = {
 		' * Author: <%= package.author.name %>\n' +
 		' * Author URI: <%= package.author.url %>\n' +
 		' * License: <%= package.license %>\n' +
-		' * Open Source Credits: <%= package.openSource.credits %>\n' +
+		' * ' +
 		' */'
 };
 
@@ -71,20 +67,27 @@ var banner = {
 // Lint, minify, and concatenate scripts
 gulp.task('build:scripts', ['clean:dist'], function() {
     return gulp.src('src/js/**/*.js')
-        .pipe(rename({ suffix: '.' + package.version }))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('build/' + package.version + '/js'));
 });
 
 // Process, lint, and minify Sass files
 gulp.task('build:styles', ['clean:dist'], function() {
-    return gulp.src('src/css/**/*.css')
-        .pipe(rename({ suffix: '.' + package.version }))
-        .pipe(gulp.dest('dist/css'));
+    return gulp.src('src/scss/**/*.scss')
+        .pipe(sass({style: 'compressed'}))
+        .pipe(header(banner.theme, { package : package }))
+	.on('error', gutil.log)
+	.pipe(gulp.dest("./build/" + package.version + "/"));
+});
+
+
+gulp.task('build:php', function(){
+	return gulp.src('./src/**/*.php')
+		.pipe(gulp.dest('build/' + package.version + '/'))
 });
 
 // Create style.css with theme header
 gulp.task('build:theme', function () {
-    return gulp.src('dist/style.css')
+    return gulp.src('build/' + package.version + '/style.css')
         .pipe(header(banner.theme, { package : package }))
-        .pipe(gulp.dest(''));
+        .pipe(gulp.dest('build/'+ package.version + '/'));
 });

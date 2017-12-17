@@ -1,12 +1,3 @@
-/*!
-Theme Name: Harner Blank theme
-Theme URI: http://harnerdesigns.com/
-Author: Harner Designs
-Author URI: http://harneredesigns.com/
-Description: A blank starter theme for developing custom worpress themes.
-Version: 1.0
-*/
-
 @import "reset";
 
 @import "type";
@@ -16,5 +7,6 @@ Version: 1.0
 html {
     body {
         background: #fff;
+        color: #333;
     }
 }
