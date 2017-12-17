@@ -7,10 +7,11 @@ var gulp = require('gulp'),
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var package = require('./package.json');
+const zip = require('gulp-zip');
+
 
 gulp.task('log', function() {gutil.log("== MY LOG TASK ==") });
 
-gulp.task('default', ['watch']);
 
 gulp.task('sass', function() {
 	gulp.src('src/scss/style.scss')
@@ -23,11 +24,19 @@ gulp.task('watch', function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
 });
 
+gulp.task('default', gulp.series('watch'));
 
-gulp.task('build', ['build:scripts', 'build:styles', 'build:php']);
 
 // Remove pre-existing content from output and test folders
 gulp.task('clean:dist', function () {
+
+});
+
+gulp.task('build:zip', function () {
+
+   return gulp.src("./build/" + package.version + "/*")
+        .pipe(zip(package.name+"_" + package.version + ".zip"))
+        .pipe(gulp.dest('build/'+ package.version + '/'));
 
 });
 
@@ -65,13 +74,13 @@ var banner = {
 
 
 // Lint, minify, and concatenate scripts
-gulp.task('build:scripts', ['clean:dist'], function() {
+gulp.task('build:scripts',  function() {
     return gulp.src('src/js/**/*.js')
         .pipe(gulp.dest('build/' + package.version + '/js'));
 });
 
 // Process, lint, and minify Sass files
-gulp.task('build:styles', ['clean:dist'], function() {
+gulp.task('build:styles',  function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass({style: 'compressed'}))
         .pipe(header(banner.theme, { package : package }))
@@ -91,3 +100,6 @@ gulp.task('build:theme', function () {
         .pipe(header(banner.theme, { package : package }))
         .pipe(gulp.dest('build/'+ package.version + '/'));
 });
+
+
+gulp.task('build', gulp.series('build:scripts', 'build:styles', 'build:php', 'build:zip'));

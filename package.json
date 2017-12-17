@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "gulp": "latest",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-concat": "latest",
     "gulp-connect": "latest",
     "gulp-header": "^1.8.9",
@@ -12,7 +12,7 @@
   },
   "name": "harner-blank-theme",
   "description": "Harner Blank Theme",
-  "version": "1.0",
+  "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
