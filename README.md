@@ -46,7 +46,7 @@ $ gulp sass
 Watches the `/scss` folder and runs the sass task when changes are made.
 
 ```
-$ gulp sass
+$ gulp watch
 ```
 
 ### build 
