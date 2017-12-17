@@ -9,7 +9,7 @@ define("THEME_DIR", get_template_directory_uri());
 wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 function enqueue_my_scripts(){
-    foreach( glob( get_template_directory_uri(). '/js/*.js' ) as $file ) {
+    foreach( glob( get_template_directory(). '/js/*.js' ) as $file ) {
         // $file contains the name and extension of the file
         wp_enqueue_script( $file, get_template_directory_uri().'/js/'.$file);
     }
@@ -32,7 +32,7 @@ add_action('admin_head', 'my_custom_fonts');
 
 function my_custom_fonts() {
   echo '<style>
-  #wpwrap{background:#D1C4E9;}
+  #wpwrap{background:#cccccc;}
     body, td, textarea, input, select {
       font-family: "Roboto";
     } 
