@@ -13,18 +13,18 @@ Clone The Github Repo, Install the Node dependencies, Run `gulp build`.
 Clone the Repo. Substitute site_name for your projects name.
 
 ```
-git clone https://github.com/harnerdesigns/Harner-Blank-Theme.git site_name
+$ git clone https://github.com/harnerdesigns/Harner-Blank-Theme.git site_name
 ```
 
 Move into the working folder. Substitute site_name for your projects name.
 
 ```
-cd site_name
+$ cd site_name
 ```
 Install the Node dependencies.
 
 ```
-npm install
+$ npm install
 ```
 
 Build Away!
