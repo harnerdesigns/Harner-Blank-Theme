@@ -38,7 +38,7 @@ A series of Gulp tasks are built into the project.
 Converts `/scss` folder into a single css file and adds the nessecary WordPress comment header.  Uses the package.json values for versioning and other data.
 
 ```
-gulp sass
+$ gulp sass
 ```
 
 ### watch
@@ -46,7 +46,7 @@ gulp sass
 Watches the `/scss` folder and runs the sass task when changes are made.
 
 ```
-gulp sass
+$ gulp sass
 ```
 
 ### build 
@@ -54,7 +54,7 @@ gulp sass
 Moves the PHP files, the style.css file, and any js files into the /build/<package.version>/ folder, then zips it up to be installed on a WordPress site. Uses the package.json values for versioning.
 
 ```
-gulp build
+$ gulp build
 ```
 
 

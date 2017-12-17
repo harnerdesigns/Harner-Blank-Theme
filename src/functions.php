@@ -5,8 +5,16 @@ define("THEME_DIR", get_template_directory_uri());
 
 // Scripts and Styles
 
-wp_enqueue_script("jquery");
+// wp_enqueue_script("jquery");
 wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+function enqueue_my_scripts(){
+    foreach( glob( get_template_directory_uri(). '/js/*.js' ) as $file ) {
+        // $file contains the name and extension of the file
+        wp_enqueue_script( $file, get_template_directory_uri().'/js/'.$file);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
 
 
 
