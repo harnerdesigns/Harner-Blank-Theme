@@ -1,6 +1,6 @@
 # Harner-Blank-Theme
 
-A Dope Fucking WordPress Theme Framework By [Harner Designs](http://harnerdesigns.com). Jump in quicker & spend less time building sites.
+A Dope Fucking Blank WordPress Theme Framework By [Harner Designs](http://harnerdesigns.com). Jump in quicker & spend less time building sites. The Harner Blank Theme was designed as a way 
 
 ## Getting Started (Quick Guide)
 
@@ -66,7 +66,7 @@ Run `gulp build` and upload .zip file to WordPress site.
 
 * **Jack Harner** - *Initial work* - [Harner Designs](https://harnerdesigns.com)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/harnerdesigns/Harner-Blank-Theme/contributors) who participated in this project.
 
 ## License
 

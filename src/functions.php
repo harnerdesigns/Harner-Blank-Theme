@@ -120,4 +120,28 @@ add_action( 'the_content', 'wpb_author_info_box' );
 // Allow HTML in author bio section 
 remove_filter('pre_user_description', 'wp_filter_kses');
 
+function mytheme_customize_register( $wp_customize ) {
+   //All our sections, settings, and controls will be added here
+
+  $wp_customize->add_setting( 'banner1_bg' , array(
+    'default'   => '#000000',
+    'transport' => 'refresh',
+) );
+
+  $wp_customize->add_section( 'banner_backgrounds' , array(
+    'title'      => __( 'Banner Backgrounds', 'mytheme' ),
+    'priority'   => 30,
+) );
+
+  $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'link_color', array(
+  'label'      => __( 'Banner 1', 'mytheme' ),
+  'section'    => 'banner_backgrounds',
+  'settings'   => 'banner1_bg',
+) ) );
+}
+add_action( 'customize_register', 'mytheme_customize_register' );
+
+
+
+
 ?>
